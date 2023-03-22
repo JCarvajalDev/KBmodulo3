@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  h1= title
+  p Listado de #{title} 
+  p Total de Registros #{totalregistro}
+  table(class='center')
+    tr
+      th AddressID
+      th AddressLine1
+      th AddressLine2
+      th City
+      th StateProvinceID
+      th PostalCode
+      th SpatialLocation
+      th rowguid
+      th ModifiedDate
+    each usuario in personas
+      tr
+        td= usuario.AddressID
+        td= usuario.AddressLine1
+        td= usuario.AddressLine2
+        td= usuario.City
+        td= usuario.StateProvinceID
+        td= usuario.PostalCode
+        td= usuario.SpatialLocation
+        td= usuario.rowguid
+        td= usuario.ModifiedDate     
+
+
+
+
+     
+

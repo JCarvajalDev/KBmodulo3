@@ -1,0 +1,44 @@
+extends layout
+
+block content
+  h1= title
+  p Listado de #{title}
+  p Total de Registros #{totalregistro}
+  table(class='center')
+    thead
+      tr
+        th BusinessEntityID
+        th NationalIDNumber
+        th LoginID
+        th OrganizationNode
+        th OrganizationLevel
+        th JobTitle
+        th BirthDate
+        th MaritalStatus
+        th Gender
+        th HireDate
+        th SalariedFlag
+        th VacationHours
+        th SickLeaveHours
+        th CurrentFlag
+        th Row GUID
+        th Modified Date
+    tbody
+      each item in empleados
+        tr
+          td= item.BusinessEntityID
+          td= item.NationalIDNumber
+          td= item.LoginID
+          td= item.OrganizationNode
+          td= item.OrganizationLevel
+          td= item.JobTitle
+          td= item.BirthDate
+          td= item.MaritalStatus
+          td= item.Gender
+          td= item.HireDate
+          td= item.SalariedFlag
+          td= item.VacationHours
+          td= item.SickLeaveHours
+          td= item.CurrentFlag
+          td= item.rowguid
+          td= item.ModifiedDate

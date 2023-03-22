@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  h1= title
+  p Listado de #{title} 
+  form(method="post" action="/empleadosadd")   
+        .form-group
+            label(for='BusinessEntityID') Business Entity ID:
+            input#BusinessEntityID.form-control(name='BusinessEntityID', type='number')
+        .form-group
+            label(for='NationalIDNumber') National ID Number:
+            input#NationalIDNumber.form-control(name='NationalIDNumber', type='text')
+        .form-group
+            label(for='LoginID') Login ID:
+            input#LoginID.form-control(name='LoginID', type='text')
+        //- .form-group
+        //-     label(for='OrganizationNode') Organization Node:
+        //-     input#OrganizationNode.form-control(name='OrganizationNode', type='text')
+        //- .form-group
+        //-     label(for='OrganizationLevel') Organization Level:
+        //-     input#OrganizationLevel.form-control(name='OrganizationLevel', type='number')
+        .form-group
+            label(for='JobTitle') Job Title:
+            input#JobTitle.form-control(name='JobTitle', type='text')
+        .form-group
+            label(for='BirthDate') Birth Date:
+            input#BirthDate.form-control(name='BirthDate', type='date')
+        .form-group
+            label(for='MaritalStatus') Marital Status:
+            input#MaritalStatus.form-control(name='MaritalStatus', type='text')
+        .form-group
+            label(for='Gender') Gender:
+            input#Gender.form-control(name='Gender', type='text')
+        .form-group
+            label(for='HireDate') Hire Date:
+            input#HireDate.form-control(name='HireDate', type='date')
+        .form-group
+            label(for='SalariedFlag') Salaried Flag:
+            input#SalariedFlag.form-control(name='SalariedFlag', type='text')
+        .form-group
+            label(for='VacationHours') Vacation Hours:
+            input#VacationHours.form-control(name='VacationHours', type='number')
+        .form-group
+            label(for='SickLeaveHours') Sick Leave Hours:
+            input#SickLeaveHours.form-control(name='SickLeaveHours', type='number')
+        .form-group
+            label(for='CurrentFlag') Current Flag:
+            input#CurrentFlag.form-control(name='CurrentFlag', type='text')
+        //- .form-group
+        //-     label(for='rowguid') Row GUID:
+        //-     input#rowguid.form-control(name='rowguid', type='text')
+        .form-group
+            label(for='ModifiedDate') Modified Date:
+            input#ModifiedDate.form-control(name='ModifiedDate', type='date')
+
+        button.btn.btn-primary(type="submit") Guardar
+  p #{respuesta}

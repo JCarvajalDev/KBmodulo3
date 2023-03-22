@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(method="POST" action="/")
+    div.form-group
+      label(for="BusinessEntityID") BusinessEntityID:
+      input(type="number" name="BusinessEntityID" class="form-control")
+
+    div.form-group
+      label(for="PersonType") PersonType:
+      input(type="text" name="PersonType" class="form-control" value="IN")
+
+    div.form-group
+      label(for="NameStyle") NameStyle:
+      input(type="number" name="NameStyle" class="form-control"  value="0")
+
+    div.form-group
+      label(for="Title") Title:
+      input(type="text" name="Title" class="form-control")
+
+    div.form-group
+      label(for="FirstName") FirstName:
+      input(type="text" name="FirstName" class="form-control")
+
+    div.form-group
+      label(for="MiddleName") MiddleName:
+      input(type="text" name="MiddleName" class="form-control")
+
+    div.form-group
+      label(for="LastName") LastName:
+      input(type="text" name="LastName" class="form-control")
+
+    div.form-group
+      label(for="EmailPromotion") EmailPromotion:
+      input(type="number" name="EmailPromotion" class="form-control" value="0")
+
+    button(type="submit" class="btn btn-primary") Guardar
+
+  p Ultimos #{totalregistro} Registros #{personas}
+    table(class='center')
+      tr
+        th BusinessEntityID
+        th PersonType
+        th NameStyle
+        th Title
+        th FirstName
+        th MiddleName
+        th LastName
+        th EmailPromotion
+      each item in personas
+        tr
+          td= item.BusinessEntityID
+          td= item.PersonType
+          td= item.NameStyle
+          td= item.Title
+          td= item.FirstName
+          td= item.MiddleName
+          td= item.LastName
+          td= item.EmailPromotion

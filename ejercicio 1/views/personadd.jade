@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1= title
+  p Listado de #{title} 
+  form(method="post" action="/personadd")   
+    .form-group
+        label(for="AddressLine1") Address Line 1
+        input.form-control(type="text", name="AddressLine1", id="AddressLine1")
+    .form-group
+        label(for="AddressLine2") Address Line 2
+        input.form-control(type="text", name="AddressLine2", id="AddressLine2")
+    .form-group
+        label(for="City") City
+        input.form-control(type="text", name="City", id="City")
+    .form-group
+        label(for="StateProvinceID") State Province ID
+        input.form-control(type="number", name="StateProvinceID", id="StateProvinceID")
+    .form-group
+        label(for="PostalCode") Postal Code
+        input.form-control(type="text", name="PostalCode", id="PostalCode")
+    //- .form-group
+    //-     label(for="SpatialLocation") Spatial Location
+    //-     input.form-control(type="text", name="SpatialLocation", id="SpatialLocation")
+    //- .form-group
+    //-     label(for="rowguid") Row GUID
+    //-     input.form-control(type="text", name="rowguid", id="rowguid")
+    .form-group
+        label(for="ModifiedDate") Modified Date
+        input.form-control(type="date", name="ModifiedDate", id="ModifiedDate")
+
+    button.btn.btn-primary(type="submit") Guardar
+  p #{respuesta}
